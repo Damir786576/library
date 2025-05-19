@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Библиотека{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        nav {
+            background-color: #e9ecef;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            min-height: 80vh;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Библиотека</h1>
+    </header>
+    <nav>
+        <a href="{% url 'book_list' %}">Список книг</a>
+        <a href="{% url 'create_book' %}">Добавить книгу</a>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 Библиотека. Все права защищены.</p>
+    </footer>
+</body>
+</html>
