@@ -11,4 +11,3 @@ class Reader(models.Model):
     class Meta:
         verbose_name = "User"
         verbose_name_plural = "Users"
-        
