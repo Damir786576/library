@@ -2,9 +2,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-    path('books/create/', views.BookCreateView.as_view(), name='create_book'),
-    path('books/', views.BookListView.as_view(), name='book_list'),
-    path('books/<int:pk>/edit/', views.BookUpdateView.as_view(), name='book_update'),
-    path('books/<int:pk>/delete/', views.BookDeleteView.as_view(), name='book_delete'),
+    path('api/register/', views.RegisterView.as_view()),
+    path('api/books/', views.BookListCreateAPIView.as_view()),
+    path('api/books/<int:pk>/', views.BookRetrieveUpdateDestroyAPIView.as_view()),
+    path('api/borrow/', views.BorrowBookAPIView.as_view()),
+    path('api/return/<int:pk>/', views.ReturnBookAPIView.as_view()),
+    path('api/readers/<int:reader_id>/borrowed-books/', views.ReaderBorrowedBooksAPIView.as_view())
 ]
